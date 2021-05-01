@@ -1,0 +1,7 @@
+<p id=“commentErr”></p>
+<%= simple_form_for([ @post , @post.comments.build]) do |f| %>
+  <p>
+    <%= f.input :body, label: false, placeholder: 'Type Comment' %><br>
+  </p>
+  <%=f.button :submit, :class => 'btn btn-custom' %>
+<% end %>

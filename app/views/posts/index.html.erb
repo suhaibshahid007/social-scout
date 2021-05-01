@@ -1,0 +1,20 @@
+<% if @posts.count.zero? %>
+  <center><h1>No Posts</h1></center>
+<% end %>
+
+<center>
+  <div class='col'>
+
+    <% @posts.each do |post| %>
+      <div class= 'post-content'>
+        <a href="/posts/<%= post.id %>">
+          <b><h3 class='post-title'><%= post.title %></h1></b>
+        </a>
+        <% if post.image.attached? %>
+          <p class="post-image"><%= image_tag post.image%></p>
+        <% end %>
+        <p class='post-body'><%= post.body %></p>
+      </div>
+    <% end %>
+  </div>
+</center>

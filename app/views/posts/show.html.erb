@@ -1,0 +1,54 @@
+<div class ="row">
+  <% if @post.image.attached? %>
+    <div class= "col-md-4">
+        <%= image_tag @post.image, :class => 'post-show' %>
+    </div>
+  <% end %>
+
+  <div class="col-md-8">
+
+    <div class="post-info">
+
+      <h2 class="post-title"><%= @post.title%></h2>
+      <p class="post-desc"><%=  @post.body%></p>
+
+      <% if user_signed_in? %>
+        <% if @post.user == current_user %>
+          <div class = "btn-group">
+            <%= link_to "Edit Post", edit_post_path(@post) , :class => "btn btn-custom" %>
+            <%= button_to "Delete Post", post_path(@post), method: :delete , :confirm => "Are you sure?", :class => "btn btn-custom" %>
+          </div>
+        <% end %>
+      <% end %>
+
+  </div>
+  </div>
+</div>
+
+<div class="row">
+
+  <div class="col-md-4">
+
+    <div class="comments">
+
+      <div id="commentParent">
+        <% if @post.comments.any? %>
+          <h1>Comments</h1>
+          <%= render @post.comments %>
+        <% else %>
+          <h5>No Comments</h5>
+        <% end %>
+      </div>
+
+      <% if user_signed_in?%>
+        <h2>Add comment</h2>
+        <%= render 'comments/form' %>
+      <% else %>
+        <p><i>Sign up to add comments!</i></p>
+      <% end %>
+
+     </div>
+
+  </div>
+
+</div>

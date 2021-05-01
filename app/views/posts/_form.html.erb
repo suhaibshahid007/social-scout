@@ -1,0 +1,9 @@
+<%= simple_form_for @post, :html => { :multipart => true} do |b| %>
+
+  <%=b.input :title %>
+  <%=b.input :body, :as => :text, :input_html => { 'rows' => 10, 'cols' => 10 } %>
+  <%=b.file_field :image %>
+  <br/>
+  <%=b.button :submit, :class => 'btn-custom2' %>
+
+<% end %>

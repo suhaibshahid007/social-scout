@@ -1,0 +1,9 @@
+<div class = "comment">
+  <p class="comment-body"><%= comment.body %></p>
+  <% if user_signed_in? %>
+    <% if comment.user == current_user %>
+        <%= button_to "Delete Comment", post_comment_path(comment.post, comment) , method: :delete, data: {confirm: "Are you sure?"}, :class => 'btn btn-custom' %>
+    <% end %>
+  <% end %>
+</div>
+
