@@ -1,24 +1,14 @@
-# README
+To run the application:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Clone the repo
+Move into the folder 'social-scout'
+Run command 'bundle install'
+Run command 'rails db:setup'
+Run command 'rails server'
+Go to 'localhost:3000' on a browser and the application is ready.
 
-Things you may want to cover:
 
-* Ruby version
+Dependencies:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Ruby Version: 2.7.1
+Rails Version: 6.0.3
