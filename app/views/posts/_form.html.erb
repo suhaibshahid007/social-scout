@@ -2,7 +2,7 @@
 
   <%=b.input :title %>
   <%=b.input :body, :as => :text, :input_html => { 'rows' => 10, 'cols' => 10 } %>
-  <%=b.file_field :image %>
+  <%=b.file_field :image, direct_upload: true %>
   <br/>
   <%=b.button :submit, :class => 'btn-custom2' %>
 

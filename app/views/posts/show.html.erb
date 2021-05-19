@@ -1,7 +1,11 @@
 <div class ="row">
   <% if @post.image.attached? %>
     <div class= "col-md-4">
+      <% if Rails.env.development? %>
         <%= image_tag @post.image, :class => 'post-show' %>
+      <% elsif Rails.env.production? %>
+        <%= cl_image_tag @post.image.key, :class => 'post-show' %>
+      <% end %>
     </div>
   <% end %>
 

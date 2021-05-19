@@ -11,7 +11,11 @@
           <b><h3 class='post-title'><%= post.title %></h1></b>
         </a>
         <% if post.image.attached? %>
-          <p class="post-image"><%= image_tag post.image%></p>
+          <% if Rails.env.development? %>
+            <p class="post-image"><%= image_tag post.image%></p>
+          <% elsif Rails.env.production? %>
+            <p class="post-image"><%= cl_image_tag post.image.key%></p>
+          <% end %>
         <% end %>
         <p class='post-body'><%= post.body %></p>
       </div>
