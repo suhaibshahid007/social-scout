@@ -1,6 +1,10 @@
 production:
-  cloud_name: ENV["cloud_name"]
-  api_key: ENV["api_key"]
-  api_secret: ENV["api_secret"]
-  enhance_image_tag: ENV["enhance_image_tag"]
-  static_file_support: ENV["static_file_support"]
+  cloud_name: "social-scout"
+  api_key: "926337359393654"
+  api_secret: "CWUVM_HMTE6qHpV8aSKeIU1hi9U"
+
+development:
+  cloud_name: "social-scout"
+  api_key: "926337359393654"
+  api_secret: "CWUVM_HMTE6qHpV8aSKeIU1hi9U"
+
